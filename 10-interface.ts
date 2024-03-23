@@ -8,8 +8,21 @@ interface User {
   getCoupon(couponname: string): number;
 }
 
-const prayag: User = {
+// NOTE: Reopening of Interface => same as adding more attributes to the interface
+interface User {
+  address: string;
+  githubToken?: string;
+}
+
+// NOTE: Inheritance
+interface Admin extends User {
+  role: "admin" | "superadmin";
+}
+
+const prayag: Admin = {
   dbId: 1,
+  role: "superadmin",
+  address: "Shaintan Gali, Khatra Mahal, Samshan ke saamne, Royal Circus",
   name: "Prayag",
   age: 30,
   email: "abc@gmail.com",
