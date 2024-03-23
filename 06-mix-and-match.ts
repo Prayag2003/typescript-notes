@@ -6,6 +6,9 @@ type CardDate = {
   expiryDate: string;
 };
 
-type CardDetails = CardNumber & CardDate & {
+type CardDetails = CardNumber &
+  CardDate & {
     cvv: number;
   };
+
+export {};
