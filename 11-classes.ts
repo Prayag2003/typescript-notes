@@ -11,6 +11,8 @@
 // NOTE: Much more cleaner way to write in Ts
 class User {
   private _courseCount = 1;
+  protected __courseCount = 2;
+
   constructor(
     public name: string,
     public email: string // private userId: string
@@ -38,6 +40,12 @@ class User {
       throw new Error("Course count should be greater than 1");
     }
     this._courseCount = courseNum;
+  }
+}
+
+class SubUser extends User {
+  changeCourseCount() {
+    this.__courseCount++;
   }
 }
 
